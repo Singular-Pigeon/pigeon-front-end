@@ -54,7 +54,7 @@ const triviaFullAnswerBank = [
 		'Nacho Cheese',
 		'Cool Ranch',
 		'Sweet and Spicy Chili',
-		'Spicy Nacho Cheese PARTY SIZE',
+		'Spicy Nacho Cheese',
 	],
 	['Michigan', 'Nile River', 'Yazoo River', 'Mississippi River'],
 	['Germany', 'France', 'Belgium', 'Cleveland, MS'],
@@ -124,10 +124,10 @@ console.log(winnerMessage);
 //innerHTML setting
 question.innerHTML = triviaQuestions[triviaIndex];
 button1.innerHTML = triviaFullAnswerBank[triviaIndex][0];
-button2.innerHTML = triviaFullAnswerBank[triviaIndex][0];
+button2.innerHTML = triviaFullAnswerBank[triviaIndex][1];
 button3.innerHTML = triviaFullAnswerBank[triviaIndex][2];
 button4.innerHTML = triviaFullAnswerBank[triviaIndex][3];
-index.innerHTML = triviaIndex;
+
 //resetting buttons
 function resetButton() {
 	question.innerHTML = triviaQuestions[triviaIndex];
@@ -135,7 +135,7 @@ function resetButton() {
 	button2.innerHTML = triviaFullAnswerBank[triviaIndex][1];
 	button3.innerHTML = triviaFullAnswerBank[triviaIndex][2];
 	button4.innerHTML = triviaFullAnswerBank[triviaIndex][3];
-	index.innerHTML = triviaIndex;
+	
 }
 //button event listeners
 button1.addEventListener('click', function () {
