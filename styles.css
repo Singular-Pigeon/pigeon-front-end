@@ -1,23 +1,29 @@
-
 body {
-    background-color: rgb(90, 126, 168);
+	background-color: rgb(90, 126, 168);
 }
 
 ul {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 li {
-    float: left;
+	float: left;
 }
 .pigeon-trivia {
-    display: flex;
+	display: flex;
 }
 
 .trivia-card {
-    border: 2px solid black;
-    border-radius: 15px;
-    text-align: center;
-    padding: 20px;
-    margin: 0 40px 0 40px;
+	border: 2px solid black;
+	border-radius: 15px;
+	text-align: center;
+	padding: 20px;
+	margin: 0 40px 0 40px;
+}
+.winner-not-active {
+	display: none;
+}
+.active {
+	display: flex;
+	color: white;
 }

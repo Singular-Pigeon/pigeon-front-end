@@ -46,36 +46,53 @@ const triviaCorrectAnswerBank = [
 //full bank of answers
 const triviaFullAnswerBank = [
 	['Bird', 'Reptile', 'Dragon', 'Human'],
-	['4', '42', '0','2']
+	['4', '42', '0', '2'],
 	['244', '264', '254', '0'],
 	['James Brown', 'Elvis Presley', 'Jimi Hendrix', 'Barry Bays'],
-	['Garfield','Obama', 'Bush', 'Dub-Ya Bush'],
-	['Nacho Cheese', 'Cool Ranch', 'Sweet and Spicy Chili', 'Spicy Nacho Cheese PARTY SIZE'],
-	['Michigan', 'Nile River', 'Yazoo River','Mississippi River'],
-	['Germany','France','Belgium', 'Cleveland, MS'],
+	['Garfield', 'Obama', 'Bush', 'Dub-Ya Bush'],
+	[
+		'Nacho Cheese',
+		'Cool Ranch',
+		'Sweet and Spicy Chili',
+		'Spicy Nacho Cheese PARTY SIZE',
+	],
+	['Michigan', 'Nile River', 'Yazoo River', 'Mississippi River'],
+	['Germany', 'France', 'Belgium', 'Cleveland, MS'],
 	['A bowling alley', 'Airport', 'Cruise Ship', 'The White House'],
-	['Baroque Era','Classical era','Modern Era', 'Renaissance Era'],
-	['Seabiscuit', 'Black Beauty', 'Mystery...or Debbi','Shadowfax'],
+	['Baroque Era', 'Classical era', 'Modern Era', 'Renaissance Era'],
+	['Seabiscuit', 'Black Beauty', 'Mystery...or Debbi', 'Shadowfax'],
 	['Michael Scarn', 'Sichael Mott', 'Dwigt', 'Anakin'],
-	['Darth Vader', 'Voldemort','Princess Leia', 'Jabba The Hutt'],
-	['Water Bear','Blue Whale', 'Capybara','Giraffe'],
-	['Lil Wayne', 'Aaron Neville', 'Beethoven','Michael Jackson'],
-	['Lawson King', 'Michelangelo','Claude Monet', 'Leonardo DiCaprio'],
+	['Darth Vader', 'Voldemort', 'Princess Leia', 'Jabba The Hutt'],
+	['Water Bear', 'Blue Whale', 'Capybara', 'Giraffe'],
+	['Lil Wayne', 'Aaron Neville', 'Beethoven', 'Michael Jackson'],
+	['Lawson King', 'Michelangelo', 'Claude Monet', 'Leonardo DiCaprio'],
 	['Fang', 'Seabiscuit', 'Air Bud', 'Harry Potter'],
-	['Toy Story','Steamboat Willie', 'Superman', 'Stuart Little'],
+	['Toy Story', 'Steamboat Willie', 'Superman', 'Stuart Little'],
 	['2.8 megabytes', '88 MPH', '7 TB', '1'],
-	['Kumiko Shimizu','Nicholas Sparks','Robert Louis Stevenson','Robert Burns'],
+	[
+		'Kumiko Shimizu',
+		'Nicholas Sparks',
+		'Robert Louis Stevenson',
+		'Robert Burns',
+	],
 ];
 //specific index
 let triviaIndex = 0;
 //check answer function
 function checkAnswer(button) {
-	if (button.innerHTML === triviaCorrectAnswerBank[triviaIndex]) {
+	if (
+		button.innerHTML === triviaCorrectAnswerBank[triviaIndex] &&
+		triviaIndex < 19
+	) {
 		triviaIndex++;
 		console.log(triviaIndex);
 		response.innerHTML = 'Correct! Your Pigeon grows stronger!';
 		resetButton();
+	} else if (triviaIndex >= 19) {
+		response.innerHTML = 'Game is over, you wasted so much time of your life.';
+		winnerMessage.classList.add('active');
 	} else {
+		console.log(triviaIndex);
 		return (response.innerHTML =
 			"WRONGO! Let's give that another go, little fella.");
 	}
@@ -88,10 +105,26 @@ let button3 = document.querySelector('.trivia3');
 let button4 = document.querySelector('.trivia4');
 let response = document.querySelector('.trivia-response');
 let index = document.querySelector('.trivia-index');
+let winnerMessage = document.querySelector('.winner-not-active');
+let closeButton = document.querySelector('.close-modal');
+let modalButton = document.querySelector('.modal');
+closeButton.addEventListener('click', function () {
+	closeModal();
+});
+modalButton.addEventListener('click', function () {
+	clickModal();
+});
+const closeModal = () => {
+	winnerMessage.classList.remove('active');
+};
+const clickModal = () => {
+	winnerMessage.classList.add('active');
+};
+console.log(winnerMessage);
 //innerHTML setting
 question.innerHTML = triviaQuestions[triviaIndex];
 button1.innerHTML = triviaFullAnswerBank[triviaIndex][0];
-button2.innerHTML = triviaFullAnswerBank[triviaIndex][1];
+button2.innerHTML = triviaFullAnswerBank[triviaIndex][0];
 button3.innerHTML = triviaFullAnswerBank[triviaIndex][2];
 button4.innerHTML = triviaFullAnswerBank[triviaIndex][3];
 index.innerHTML = triviaIndex;
