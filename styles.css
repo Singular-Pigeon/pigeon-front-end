@@ -1,8 +1,4 @@
-h1,h2 {
-    font-family: 'Fira Sans', sans-serif;
-    text-align: center;
 
-}
 body {
     background-color: rgb(90, 126, 168);
 }
@@ -13,4 +9,15 @@ ul {
 
 li {
     float: left;
+}
+.pigeon-trivia {
+    display: flex;
+}
+
+.trivia-card {
+    border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    margin: 0 40px 0 40px;
 }
