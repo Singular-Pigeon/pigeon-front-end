@@ -4,5 +4,13 @@ h1,h2 {
 
 }
 body {
-    background-color: lightblue
+    background-color: rgb(90, 126, 168);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    float: left;
 }
