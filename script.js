@@ -88,14 +88,14 @@ let button3 = document.querySelector('.trivia3');
 let button4 = document.querySelector('.trivia4');
 let response = document.querySelector('.trivia-response');
 let index = document.querySelector('.trivia-index');
-
+//innerHTML setting
 question.innerHTML = triviaQuestions[triviaIndex];
 button1.innerHTML = triviaFullAnswerBank[triviaIndex][0];
 button2.innerHTML = triviaFullAnswerBank[triviaIndex][1];
 button3.innerHTML = triviaFullAnswerBank[triviaIndex][2];
 button4.innerHTML = triviaFullAnswerBank[triviaIndex][3];
 index.innerHTML = triviaIndex;
-//innerHTML setting
+//resetting buttons
 function resetButton() {
 	question.innerHTML = triviaQuestions[triviaIndex];
 	button1.innerHTML = triviaFullAnswerBank[triviaIndex][0];
