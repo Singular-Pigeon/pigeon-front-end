@@ -90,6 +90,7 @@ function checkAnswer(button) {
 		resetButton();
 	} else if (triviaIndex >= 19) {
 		response.innerHTML = 'Game is over, you wasted so much time of your life.';
+		winnerMessage.classList.add('active');
 	} else {
 		console.log(triviaIndex);
 		return (response.innerHTML =
@@ -104,6 +105,22 @@ let button3 = document.querySelector('.trivia3');
 let button4 = document.querySelector('.trivia4');
 let response = document.querySelector('.trivia-response');
 let index = document.querySelector('.trivia-index');
+let winnerMessage = document.querySelector('.winner-not-active');
+let closeButton = document.querySelector('.close-modal');
+let modalButton = document.querySelector('.modal');
+closeButton.addEventListener('click', function () {
+	closeModal();
+});
+modalButton.addEventListener('click', function () {
+	clickModal();
+});
+const closeModal = () => {
+	winnerMessage.classList.remove('active');
+};
+const clickModal = () => {
+	winnerMessage.classList.add('active');
+};
+console.log(winnerMessage);
 //innerHTML setting
 question.innerHTML = triviaQuestions[triviaIndex];
 button1.innerHTML = triviaFullAnswerBank[triviaIndex][0];
