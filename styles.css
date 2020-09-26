@@ -46,8 +46,8 @@ li {
 }
 .active {
 	display: flex;
-	color: white;
-	border: 5px solid white;
+	color: rgb(91, 91, 254);
+	border: 5px solid rgb(91, 91, 254);
 	height: 75vh;
 	width: 75vw;
 	flex-direction: column;
@@ -57,10 +57,52 @@ li {
 	z-index: 500;
 	top: 10vh;
 	left: 10vw;
-	background-color: purple;
+	background-color: rgb(59, 165, 160);
 	padding: 40px;
+	animation-name: stretch;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-out;
+	animation-delay: 0;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+}
+.winner-heading {
+	animation: winner 1s infinite;
 }
 
+@keyframes winner {
+	0% {
+		color: rgb(27, 209, 124);
+	}
+	25% {
+		color: rgb(230, 33, 240);
+	}
+	50% {
+		color: rgb(248, 240, 14);
+	}
+	75% {
+		color: rgb(136, 6, 172);
+	}
+	100% {
+		color: rgb(27, 209, 124);
+	}
+}
+@keyframes stretch {
+	0% {
+		transform: scale(0.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+.winner-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 50px;
+}
 .trivia-button {
 	color: rgb(55, 107, 167);
 	border: 3px solid rgb(59, 165, 160);
@@ -106,6 +148,10 @@ li {
 	margin-top: 10px;
 	width: 75px;
 	height: 40px;
+	background-color: rgb(91, 91, 254);
+	color: white;
+	font-size: 20px;
+	border: 5px solid rgb(94, 245, 94);
 }
 .response-doNot-show {
 	display: none;
@@ -125,5 +171,4 @@ li {
 
 .egg-nonactive {
 	display: none;
-
 }
