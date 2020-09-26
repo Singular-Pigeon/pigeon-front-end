@@ -1,6 +1,6 @@
 body {
 	background-color: rgb(55, 107, 167);
-	font-family: 'Righteous', cursive;
+	font-family: 'Righteous', sans-serif;
 	color: rgb(186, 211, 247);
 }
 .welcome {
@@ -94,7 +94,8 @@ li {
 }
 
 .pigeon-image {
-	margin-left: 30px;
+	margin-right: 30px;
+	width: 30%;
 }
 
 .close-modal {
