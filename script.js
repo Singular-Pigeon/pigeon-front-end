@@ -86,6 +86,9 @@ function checkAnswer(button) {
 		setTimeout(function () {
 			response.classList.add('response-doNot-show');
 		}, 3000);
+		eggWidth = eggWidth + 20;
+		egg.style.width = `${eggWidth}%`;
+		levelCount++;
 
 		resetButton();
 	} else if (triviaIndex >= 19) {
@@ -102,8 +105,19 @@ function checkAnswer(button) {
 		}, 4000);
 	}
 }
+//function for changing egg to pigeon
+const pigeonChange = () => {
+	//change pigeon class to active
+	//change egg class to deactive
+};
+
+//counters
+let eggWidth = 30;
+let levelCount = 1;
 //query selectors
 const question = document.querySelector('.trivia-question');
+let egg = document.querySelector('.egg-image');
+
 let button1 = document.querySelector('.trivia1');
 let button2 = document.querySelector('.trivia2');
 let button3 = document.querySelector('.trivia3');
@@ -113,6 +127,7 @@ let index = document.querySelector('.trivia-index');
 let winnerMessage = document.querySelector('.winner-not-active');
 let closeButton = document.querySelector('.close-modal');
 let modalButton = document.querySelector('.modal');
+let levelCounter = document.querySelector('.span-level');
 closeButton.addEventListener('click', function () {
 	closeModal();
 });
@@ -132,9 +147,11 @@ button1.innerHTML = triviaFullAnswerBank[triviaIndex][0];
 button2.innerHTML = triviaFullAnswerBank[triviaIndex][1];
 button3.innerHTML = triviaFullAnswerBank[triviaIndex][2];
 button4.innerHTML = triviaFullAnswerBank[triviaIndex][3];
+levelCounter.innerHTML = `${levelCount}`;
 
 //resetting buttons
 function resetButton() {
+	levelCounter.innerHTML = `${levelCount}`;
 	question.innerHTML = triviaQuestions[triviaIndex];
 	button1.innerHTML = triviaFullAnswerBank[triviaIndex][0];
 	button2.innerHTML = triviaFullAnswerBank[triviaIndex][1];
