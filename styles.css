@@ -114,3 +114,16 @@ li {
 	text-decoration: underline;
 	color: rgb(142, 3, 142);
 }
+
+.pigeon-image {
+	width: 30%;
+}
+
+.pigeon-nonactive {
+	display: none;
+}
+
+.egg-nonactive {
+	display: none;
+
+}

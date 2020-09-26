@@ -89,6 +89,13 @@ function checkAnswer(button) {
 		eggWidth = eggWidth + 20;
 		egg.style.width = `${eggWidth}%`;
 		levelCount++;
+		if (levelCount === 6) { 
+		pigeonChange()
+		}
+		if (levelCount > 6) {
+			pigeonWidth = pigeonWidth + 8;
+		}
+		pigeon.style.width = `${pigeonWidth}%`;
 
 		resetButton();
 	} else if (triviaIndex >= 19) {
@@ -106,19 +113,24 @@ function checkAnswer(button) {
 	}
 }
 //function for changing egg to pigeon
+
 const pigeonChange = () => {
 	//change pigeon class to active
+	egg.classList.add("egg-nonactive");
+	pigeon.classList.remove("pigeon-nonactive")
 	//change egg class to deactive
 };
 
 //counters
 let eggWidth = 30;
+let pigeonWidth = 30;
 let levelCount = 1;
 //query selectors
 const question = document.querySelector('.trivia-question');
 let egg = document.querySelector('.egg-image');
-
+let pigeon = document.querySelector('.pigeon-image')
 let button1 = document.querySelector('.trivia1');
+pigeon.classList.add("pigeon-nonactive");
 let button2 = document.querySelector('.trivia2');
 let button3 = document.querySelector('.trivia3');
 let button4 = document.querySelector('.trivia4');
