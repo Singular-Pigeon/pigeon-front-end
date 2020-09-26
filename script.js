@@ -50,12 +50,7 @@ const triviaFullAnswerBank = [
 	['244', '264', '254', '0'],
 	['James Brown', 'Elvis Presley', 'Jimi Hendrix', 'Barry Bays'],
 	['Garfield', 'Obama', 'Bush', 'Dub-Ya Bush'],
-	[
-		'Nacho Cheese',
-		'Cool Ranch',
-		'Sweet and Spicy Chili',
-		'Spicy Nacho Cheese',
-	],
+	['Nacho Cheese', 'Cool Ranch', 'Sweet and Spicy Chili', 'Spicy Nacho Cheese'],
 	['Michigan', 'Nile River', 'Yazoo River', 'Mississippi River'],
 	['Germany', 'France', 'Belgium', 'Cleveland, MS'],
 	['A bowling alley', 'Airport', 'Cruise Ship', 'The White House'],
@@ -86,15 +81,25 @@ function checkAnswer(button) {
 	) {
 		triviaIndex++;
 		console.log(triviaIndex);
-		response.innerHTML = 'Correct! Your Pigeon grows stronger!';
+		response.innerHTML = 'CORRECT! Your pigeon grows stronger!';
+		response.classList.remove('response-doNot-show');
+		setTimeout(function () {
+			response.classList.add('response-doNot-show');
+		}, 3000);
+
 		resetButton();
 	} else if (triviaIndex >= 19) {
 		response.innerHTML = 'Game is over, you wasted so much time of your life.';
+		response.classList.remove('response-doNot-show');
+
 		winnerMessage.classList.add('active');
 	} else {
 		console.log(triviaIndex);
-		return (response.innerHTML =
-			"WRONGO! Let's give that another go, little fella.");
+		response.innerHTML = "WRONGO! Let's give that another go, little fella.";
+		response.classList.remove('response-doNot-show');
+		setTimeout(function () {
+			response.classList.add('response-doNot-show');
+		}, 4000);
 	}
 }
 //query selectors
@@ -135,7 +140,6 @@ function resetButton() {
 	button2.innerHTML = triviaFullAnswerBank[triviaIndex][1];
 	button3.innerHTML = triviaFullAnswerBank[triviaIndex][2];
 	button4.innerHTML = triviaFullAnswerBank[triviaIndex][3];
-	
 }
 //button event listeners
 button1.addEventListener('click', function () {
